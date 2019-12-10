@@ -9,7 +9,7 @@ class Factory
 public:
     Factory(/* args */);
     ~Factory();
-    Product* createProduct(std::string type)
+    static Product* createProduct(std::string type)
     {
         if (type == "A")
         {
@@ -20,7 +20,7 @@ public:
             return new ProductB();
         }
     }
-    void freeProduct(Product* &p)
+    static void freeProduct(Product* &p)
     {
         if (p != NULL)
         {

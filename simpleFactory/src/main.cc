@@ -8,12 +8,12 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     Factory f;
-    Product* a = f.createProduct("A");
-    Product* b = f.createProduct("B");
+    Product* a = Factory::createProduct("A");
+    Product* b = Factory::createProduct("B");
     a->showUsage();
     b->showUsage();
-    f.freeProduct(a);
-    f.freeProduct(b);
+    Factory::freeProduct(a);
+    Factory::freeProduct(b);
     return 0;
 }
 
