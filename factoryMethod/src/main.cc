@@ -11,13 +11,22 @@ int main(int argc, char const *argv[])
 
     Log* f = flc->createLog();
     f->writeLog("Hello");
+    flc->freeLog(f);
     Log* d = dlc->createLog();
-    d->writeLog("Hi");
+    d->writeLog("Hello");
+    dlc->freeLog(d);
+
+    if(f == NULL)
+    {
+        std::cout<<"f is freed"<<std::endl;
+    }
+    if(d == NULL)
+    {
+        std::cout<<"d is freed"<<std::endl;
+    }
 
     delete flc;
     delete dlc;
-    delete f;
-    delete d;
 
     return 0;
 }

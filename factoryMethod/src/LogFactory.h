@@ -10,6 +10,15 @@ public:
     LogFactory(/* args */);
     virtual ~LogFactory();
     virtual Log* createLog() = 0;
+    void freeLog(Log* &p)
+    {
+        if(p != NULL)
+        {
+            std::cout<<"free LogFactory"<<std::endl;
+            delete p;
+            p = NULL;
+        }
+    }
 };
 
 LogFactory::LogFactory(/* args */)
